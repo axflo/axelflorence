@@ -1,17 +1,18 @@
 h1{
 	color: rgb(50, 50, 50);
-	font-size: 50px;
+	font-size: 45px;
 	text-align: center;
 	font-family: 'Open Sans', arial;
+	font-style: normal;
 }
 
 body{
-	background-color: rgb(230,230,230);
+	background-color: rgb(229,229,229);
 }
 
 #container{
 	margin: 0 auto;
-	width: 720px;
+	width: 60%;
 	font-size: 18px;
 	font-family: 'Open Sans', sans-serif;
 	text-align: left;
@@ -20,24 +21,14 @@ body{
 #header{
 	text-align: center;
 }
-#nav{
-	list-style-type: none;
-}
-#nav li{
-	display: inline;
-	padding: 0 1em;
-}
-.title{
-	font-size: 20px;
-	font-style: bold;
-}
+
 
 img#photo{
 	border-radius: 50%;
 	border: 4px solid white;
 	text-align: center;
 }
-
+/*
 .achievement{
 	text-align: left;
 	background-color: white;
@@ -45,13 +36,11 @@ img#photo{
 	padding: 30px;
 }
 
-a{
-	text-decoration: none;
-	font-size: 20px;
-}
+
 a:hover{
 	text-decoration: underline;
 }
+
 
 ul#liste_horizontale li{
 	display: inline;
@@ -69,6 +58,39 @@ ul#liste_horizontale {
 	text-align: center;
 }
 
+#nav{
+	list-style-type: none;
+}
+#nav li{
+	display: inline;
+	padding: 0 1em;
+}
+.title{
+	font-size: 20px;
+	font-style: bold;
+}
+*/
+
 #spacer{
-	height: 6em;
+	height: 5em;
+}
+
+#icons{
+	font-size: 85px;
+	color: rgb(50,50,50);
+}
+
+#icons:hover{
+	color: rgb(70,98,158);
+}
+
+#interest{
+	margin-top: 2.5em;
+	font-size: 12px;
+}
+
+#hello{
+	padding-top: 50px;
+	font-size: 12px;
+	font-style: italic;
 }
