@@ -1,21 +1,35 @@
 body{
-	font-family: 'Work Sans';
-	background-color: #E8F1F2;
+	font-family: 'Poppins';
+	background-color: #363457;
+}
+
+header{
+	margin: 0 auto;
+	width: 90%;
+	text-align: center;
+}
+
+.py-3{
+	padding-top: 3rem!important;
 }
 
 #mark{
-	color: #363457;
-	font-size: 30px;
+	color: #E8F1F2;
+	font-size: 1rem;
 	text-align: center;
 	font-family: 'Poppins';
-	font-weight: 700;
+	font-weight: 600;
 	text-decoration: none;
+}
+
+#pm{
+	font-weight: 200;
 }
 
 .container{
 	margin: 0 auto;
-	width: 75%;
-	font-family: 'Work Sans', sans-serif;
+	width: 90%;
+	font-family: 'Poppins', sans-serif;
 }
 
 .spacer{
@@ -38,66 +52,17 @@ h1{
 	text-align: left;
 }
 
-#subhead{
-	font-size: 26px;
-}
-
-.small-text{
-	font-size: 16px;
-	color: #0A8754;
-}
-
-.small-text a{
-	font-size: 16px;
-	color: #0A8754;
-	text-decoration: none;
-
-}
-
-h1{
-	font-size: 40px;
-	font-weight: 800;
-	text-align: left;
-}
-
-.small-text:hover{
-	color: #0A8754;
-	font-weight: 700;
-}
-
-.small-text a:hover{
-	color: #0A8754;
-	font-weight: 700;
-}
-
-img{
-	z-index: -1;
-	width: 100%;
-	left: 0px;
-	top: 0px;
-}
-
-img#profile{
-	width: 75%;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
 
 h2{
-	font-size: 40px;
+	font-size: 3rem;
 	font-weight: 800;
-	text-align: left;
+	text-align: center;
 	color: #363457;
 }
 
-div.row.chapter{
-	padding-top: 2em;
-	padding-bottom: 2em;
-}
-
 .paragraph{
-	font-size: 22px;
+	font-size: 1rem;
+	font-weight: 400;
 }
 
 p.inverted{
@@ -108,18 +73,80 @@ h2.inverted{
 	color: #E8F1F2;
 }
 
-footer{
-	background-color: #363457;
+#links-row-d{
+	text-align: center;
+	padding-top: 6rem;
 }
 
-footer div.row{
-	padding-top: 3em;
-	padding-bottom: 3em;
+#links-row-m{
+	text-align: center;
+	padding-top: 6rem;
 }
 
-img#little-face{
-	width: 150px;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+.btn{
+	color: #E8F1F2;
+	border-color: #E8F1F2;
+	font-weight: 400;
+}
+
+.btn-lg{
+	font-size: 1rem;
+    border-radius: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+
+.btn:hover{
+	color: #363457;
+	border-color: #E8F1F2;
+	background-color: #E8F1F2;
+}
+
+.btn:success{
+	color: #363457;
+	border-color: #E8F1F2;
+	background-color: #E8F1F2;
+}
+
+.btn:focus{
+	color: #363457;
+	border-color: #E8F1F2;
+	background-color: #E8F1F2;
+}
+
+#email-col{
+	text-align: right;
+	padding-right: 4rem;
+}
+
+#linkedin-col{
+	text-align: left;
+	padding-left: 4rem;
+}
+
+.button-links{
+	color: #E8F1F2;
+	text-decoration: none;
+}
+
+.button-links:hover{
+	color: #363457;
+}
+
+.button-links:focus{
+	color: #363457;
+}
+
+.button-links:success{
+	color: #363457;
+}
+
+@media (max-width: 767.98px) {
+	#links-row-d{display: none;}
+	#links-row-m{display: block;}
+}
+
+@media (min-width: 767.98px) {
+	#links-row-m{display: none;}
 }
