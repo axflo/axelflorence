@@ -1,152 +1,40 @@
-body{
-	font-family: 'Poppins';
-	background-color: #363457;
-}
-
-header{
-	margin: 0 auto;
-	width: 90%;
-	text-align: center;
-}
-
-.py-3{
-	padding-top: 3rem!important;
-}
-
-#mark{
-	color: #E8F1F2;
-	font-size: 1rem;
-	text-align: center;
-	font-family: 'Poppins';
-	font-weight: 600;
-	text-decoration: none;
-}
-
-#pm{
-	font-weight: 200;
-}
-
-.container{
-	margin: 0 auto;
-	width: 90%;
-	font-family: 'Poppins', sans-serif;
-}
-
-.spacer{
-	height: 2em;
-}
-
-#hero-row{
+body {
+	margin: 0;
+	min-height: 100vh;
 	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #001713;
+	font-family: 'Inter', sans-serif;
 }
 
-.hero-blocks{
-	padding-bottom: 3em;
-	display: inline-block;
-	align-self: flex-end;
+.content {
+	width: 90%;
+	max-width: 402px;
+	padding: 3rem 0;
 }
 
-h1{
-	font-size: 40px;
-	font-weight: 800;
-	text-align: left;
+.name {
+	margin: 0 0 1.5em;
+	font-size: 18px;
+	font-weight: 700;
+	color: #E1E1E1;
 }
 
-
-h2{
-	font-size: 3rem;
-	font-weight: 800;
-	text-align: center;
-	color: #363457;
-}
-
-.paragraph{
-	font-size: 1rem;
+.bio {
+	margin: 0 0 1.5em;
+	font-size: 16px;
 	font-weight: 400;
+	line-height: 1.5;
+	color: #E1E1E1;
 }
 
-p.inverted{
-	color: #E8F1F2;
+.bio a {
+	color: #E1E1E1;
+	text-decoration: underline;
 }
 
-h2.inverted{
-	color: #E8F1F2;
-}
-
-#links-row-d{
-	text-align: center;
-	padding-top: 6rem;
-}
-
-#links-row-m{
-	text-align: center;
-	padding-top: 6rem;
-}
-
-.btn{
-	color: #E8F1F2;
-	border-color: #E8F1F2;
-	font-weight: 400;
-}
-
-.btn-lg{
-	font-size: 1rem;
-    border-radius: 2rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
-}
-
-
-.btn:hover{
-	color: #363457;
-	border-color: #E8F1F2;
-	background-color: #E8F1F2;
-}
-
-.btn:success{
-	color: #363457;
-	border-color: #E8F1F2;
-	background-color: #E8F1F2;
-}
-
-.btn:focus{
-	color: #363457;
-	border-color: #E8F1F2;
-	background-color: #E8F1F2;
-}
-
-#email-col{
-	text-align: right;
-	padding-right: 4rem;
-}
-
-#linkedin-col{
-	text-align: left;
-	padding-left: 4rem;
-}
-
-.button-links{
-	color: #E8F1F2;
-	text-decoration: none;
-}
-
-.button-links:hover{
-	color: #363457;
-}
-
-.button-links:focus{
-	color: #363457;
-}
-
-.button-links:success{
-	color: #363457;
-}
-
-@media (max-width: 767.98px) {
-	#links-row-d{display: none;}
-	#links-row-m{display: block;}
-}
-
-@media (min-width: 767.98px) {
-	#links-row-m{display: none;}
+.signature {
+	display: block;
+	margin-top: 1em;
 }
