@@ -1,11 +1,13 @@
 body {
 	margin: 0;
+	width: 100%;
 	min-height: 100vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	background-color: #001713;
 	font-family: 'Inter', sans-serif;
+	overflow-x: hidden;
 }
 
 .content {
@@ -37,4 +39,16 @@ body {
 .signature {
 	display: block;
 	margin-top: 1em;
+}
+
+@media (max-width: 768px) {
+	body {
+		box-sizing: border-box;
+		align-items: flex-start;
+		padding-top: 2.5rem;
+	}
+
+	.content {
+		padding: 0 0 1.5rem;
+	}
 }
