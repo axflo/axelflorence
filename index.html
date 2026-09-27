@@ -7,7 +7,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Text:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Text:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_32px.png"/>
@@ -19,18 +19,87 @@
   <body>
 
     <main class="content">
-      <h1 class="label">project</h1>
+      <h1 class="label"><a href="#">axel florence</a></h1>
 
       <ul class="projects">
-        <li>Flodesk MCP</li>
-        <li>Instrumentator</li>
-        <li>Stash Saves</li>
-        <li>Chronicle</li>
-        <li>Flodesk Free Tools</li>
-        <li>Brand Onboarding</li>
-        <li>Shopify Onboarding</li>
+        <li><a href="#flodesk-mcp">Flodesk MCP</a></li>
+        <li><a href="#instrumentator">Instrumentator</a></li>
+        <li><a href="#stash-saves">Stash Saves</a></li>
+        <li><a href="#chronicle">Chronicle</a></li>
+        <li><a href="#flodesk-free-tools">Flodesk Free Tools</a></li>
+        <li><a href="#brand-onboarding">Brand Onboarding</a></li>
+        <li><a href="#shopify-onboarding">Shopify Onboarding</a></li>
       </ul>
     </main>
+
+    <article class="panel" data-project="flodesk-mcp" hidden>
+      <h2 class="panel-title">Flodesk MCP</h2>
+      <p class="panel-description">The Flodesk MCP allows Flodesk users to connect their account to Claude, chatGPT and other AI platforms, to use natural language to interact with their Flodesk account.</p>
+      <p class="panel-credits">Product: Axel Florence. Engineering: Nam Dau. Design: Anja Seemüller</p>
+      <img class="panel-image" src="images/projects/flodesk-mcp.png" alt="" width="930" height="524">
+    </article>
+
+    <article class="panel" data-project="instrumentator" hidden>
+      <h2 class="panel-title">Instrumentator</h2>
+    </article>
+
+    <article class="panel" data-project="stash-saves" hidden>
+      <h2 class="panel-title">Stash Saves</h2>
+    </article>
+
+    <article class="panel" data-project="chronicle" hidden>
+      <h2 class="panel-title">Chronicle</h2>
+    </article>
+
+    <article class="panel" data-project="flodesk-free-tools" hidden>
+      <h2 class="panel-title">Flodesk Free Tools</h2>
+    </article>
+
+    <article class="panel" data-project="brand-onboarding" hidden>
+      <h2 class="panel-title">Brand Onboarding</h2>
+    </article>
+
+    <article class="panel" data-project="shopify-onboarding" hidden>
+      <h2 class="panel-title">Shopify Onboarding</h2>
+    </article>
+
+    <script>
+      // Open the project panel matching the URL hash (e.g. #flodesk-mcp).
+      var links = document.querySelectorAll('.projects a');
+      var panels = document.querySelectorAll('.panel');
+
+      function showProject() {
+        var id = location.hash.slice(1);
+        var open = false;
+
+        panels.forEach(function (panel) {
+          var match = panel.dataset.project === id;
+          panel.hidden = !match;
+          if (match) {
+            panel.scrollTop = 0;
+            open = true;
+          }
+        });
+
+        links.forEach(function (link) {
+          if (open && link.hash === '#' + id) {
+            link.setAttribute('aria-current', 'page');
+          } else {
+            link.removeAttribute('aria-current');
+          }
+        });
+
+        document.body.classList.toggle('has-open-project', open);
+      }
+
+      window.addEventListener('hashchange', showProject);
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && location.hash) {
+          location.hash = '';
+        }
+      });
+      showProject();
+    </script>
 
   </body>
 </html>
