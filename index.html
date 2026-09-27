@@ -32,34 +32,34 @@
       </ul>
     </main>
 
-    <article class="panel" data-project="flodesk-mcp" hidden>
+    <article class="panel" data-project="flodesk-mcp">
       <h2 class="panel-title">Flodesk MCP</h2>
       <p class="panel-description">The Flodesk MCP allows Flodesk users to connect their account to Claude, chatGPT and other AI platforms, to use natural language to interact with their Flodesk account.</p>
       <p class="panel-credits">Product: Axel Florence. Engineering: Nam Dau. Design: Anja Seemüller</p>
       <img class="panel-image" src="images/projects/flodesk-mcp.png" alt="" width="930" height="524">
     </article>
 
-    <article class="panel" data-project="instrumentator" hidden>
+    <article class="panel" data-project="instrumentator">
       <h2 class="panel-title">Instrumentator</h2>
     </article>
 
-    <article class="panel" data-project="stash-saves" hidden>
+    <article class="panel" data-project="stash-saves">
       <h2 class="panel-title">Stash Saves</h2>
     </article>
 
-    <article class="panel" data-project="chronicle" hidden>
+    <article class="panel" data-project="chronicle">
       <h2 class="panel-title">Chronicle</h2>
     </article>
 
-    <article class="panel" data-project="flodesk-free-tools" hidden>
+    <article class="panel" data-project="flodesk-free-tools">
       <h2 class="panel-title">Flodesk Free Tools</h2>
     </article>
 
-    <article class="panel" data-project="brand-onboarding" hidden>
+    <article class="panel" data-project="brand-onboarding">
       <h2 class="panel-title">Brand Onboarding</h2>
     </article>
 
-    <article class="panel" data-project="shopify-onboarding" hidden>
+    <article class="panel" data-project="shopify-onboarding">
       <h2 class="panel-title">Shopify Onboarding</h2>
     </article>
 
@@ -68,16 +68,25 @@
       var links = document.querySelectorAll('.projects a');
       var panels = document.querySelectorAll('.panel');
 
+      var firstRender = true;
+
       function showProject() {
         var id = location.hash.slice(1);
-        var open = false;
+        var wasOpen = document.body.classList.contains('has-open-project');
+        var open = Array.prototype.some.call(panels, function (panel) {
+          return panel.dataset.project === id;
+        });
+        // Slide only when opening or closing, not when switching projects
+        // or when the page loads with a project already in the URL.
+        var instant = firstRender || (wasOpen && open);
+        firstRender = false;
 
         panels.forEach(function (panel) {
           var match = panel.dataset.project === id;
-          panel.hidden = !match;
+          panel.classList.toggle('no-transition', instant);
+          panel.classList.toggle('is-open', match);
           if (match) {
             panel.scrollTop = 0;
-            open = true;
           }
         });
 
@@ -91,6 +100,16 @@
 
         document.body.classList.toggle('has-open-project', open);
       }
+
+      // Clicking the open project's name again closes its panel.
+      links.forEach(function (link) {
+        link.addEventListener('click', function (event) {
+          if (link.hasAttribute('aria-current')) {
+            event.preventDefault();
+            location.hash = '';
+          }
+        });
+      });
 
       window.addEventListener('hashchange', showProject);
       document.addEventListener('keydown', function (event) {
